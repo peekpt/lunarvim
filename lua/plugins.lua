@@ -31,6 +31,10 @@ vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when th
 return require("packer").startup(function(use)
     -- Packer can manage itself as an optional plugin
     use "wbthomason/packer.nvim"
+    
+    -- Flutter
+    
+    use {'akinsho/flutter-tools.nvim'}
 
     -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
     use {"neovim/nvim-lspconfig", opt = true}
@@ -51,8 +55,10 @@ return require("packer").startup(function(use)
     -- Autocomplete
     use {"hrsh7th/nvim-compe", opt = true}
     use {"hrsh7th/vim-vsnip", opt = true}
+    use {"hrsh7th/vim-vsnip-integ", opt=true}
+    use {"Neevash/awesome-flutter-snippets", opt = true}
     use {"rafamadriz/friendly-snippets", opt = true}
-
+    use {"nvim-lua/completion-nvim"}
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"windwp/nvim-ts-autotag", opt = true}
@@ -78,7 +84,7 @@ return require("packer").startup(function(use)
 
     -- Color
     use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
-
+    use {"tomasiser/vim-code-dark", opt= true}
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
 
@@ -89,6 +95,11 @@ return require("packer").startup(function(use)
     -- Zen Mode
     use {"Pocco81/TrueZen.nvim", opt = true}
 
+    -- Multiple Cursors
+    use {"terryma/vim-multiple-cursors",opt=true}
+    use 'karb94/neoscroll.nvim'
+
+    require_plugin("tomasiser/vim-code-dark")
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
     require_plugin("nvim-lspinstall")
@@ -119,6 +130,8 @@ return require("packer").startup(function(use)
     require_plugin('lsp-rooter.nvim')
     require_plugin("TrueZen.nvim")
     require_plugin("nvim-ts-context-commentstring")
+    require_plugin("terryma/vim-multiple-cursors")
+    require_plugin("karb94/neoscroll.nvim")
 
     -- Extras
     if O.extras then

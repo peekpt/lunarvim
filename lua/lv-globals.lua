@@ -34,7 +34,9 @@ O = {
         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
 		analysis = {type_checking = "basic", auto_search_paths = true, use_library_code_types = true}
     },
-    dart = {sdk_path = '/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot'},
+    dart = {
+        sdk_path = '/Users/paulo/development/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot'
+    },
     lua = {
         -- @usage can be 'lua-format'
         formatter = '',
@@ -82,7 +84,7 @@ O = {
 '              `.   .   .\'  | |__| |_| | | | | (_| | |   \\ V / | | | | | | |',
 '                `-...-\'    |_____\\__,_|_| |_|\\__,_|_|    \\_/  |_|_| |_| |_|',
 		},
-		footer= {'chrisatmachine.com'}
+		footer= {'vim 0.50'}
 	}
 }
 

@@ -69,7 +69,16 @@ vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, s
 -- open projects
 vim.api.nvim_set_keymap('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
                         {noremap = true, silent = true})
+
+-- open projects
+vim.api.nvim_set_keymap('n', '<leader>xx', "A;<CR>",
+                        {noremap = true, silent = true})
+-- open projects
+vim.api.nvim_set_keymap('n', '<leader>0', ":Telescope flutter commands<CR>",
+                        {noremap = true, silent = true})
+
 -- TODO create entire treesitter section
+
 
 local mappings = {
     ["/"] = "Comment",
@@ -78,6 +87,22 @@ local mappings = {
     ["f"] = "Find File",
     ["h"] = "No Highlight",
     ["p"] = "Projects",
+    ["9"] = "Flutter Commands",
+    
+    y = {
+        name="+Flutter",
+        g = {"<cmd>FlutterRun<cr>","run"},
+        v = {"<cmd>FlutterVisualDebug<cr>","visual debug"},
+        R = {"<cmd>FlutterRestart<cr>","restart"},
+        r = {"<cmd>FlutterReload<cr>","reload"},
+        q = {"<cmd>FlutterQuit<cr>","quit"},
+        o = {"<cmd>FlutterOutline<cr>","outline"},
+        c = {"<cmd>FlutterLogClear<cr>","clear log"},
+        e = {"<cmd>FlutterEmulators<cr>","emulators"},
+        d = {"<cmd>FlutterDevives<cr>","devices"},
+        t = {"<cmd>FlutterDevTools<cr>","dev tools"}
+        
+    },
     d = {
         name = "+Diagnostics",
         t = {"<cmd>TroubleToggle<cr>", "trouble"},
